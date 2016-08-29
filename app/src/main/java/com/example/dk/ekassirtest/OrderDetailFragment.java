@@ -131,6 +131,7 @@ public class OrderDetailFragment extends Fragment {
 		}
 	}
 
+	// XXX Async task
 	private class DecodeBitmapAsyncTask extends AsyncTask<InputStream, Void, Bitmap> {
 		@Override
 		protected Bitmap doInBackground(InputStream... params) {

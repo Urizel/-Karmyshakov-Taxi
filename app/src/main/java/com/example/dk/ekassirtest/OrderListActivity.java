@@ -14,6 +14,7 @@ public class OrderListActivity extends SingleFragmentActivity implements OrderLi
 		return OrderListFragment.newInstance();
 	}
 
+	// Why not handle in fragment
 	@Override
 	public void onOrderSelected(Order order) {
 		startActivity(OrderDetailActivity.getIntent(this, order));

@@ -1,7 +1,6 @@
 package com.example.dk.ekassirtest;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -27,6 +26,7 @@ import java.util.List;
 public class OrderListFragment extends Fragment implements
 		LoaderManager.LoaderCallbacks<AsyncResult<List<Order>>>, SwipeRefreshLayout.OnRefreshListener {
 
+	// XXX not private?
 	RecyclerView recyclerView;
 	SwipeRefreshLayout swipeRefreshLayout;
 	OrderListAdapter adapter;
@@ -56,6 +56,7 @@ public class OrderListFragment extends Fragment implements
 		swipeRefreshLayout = (SwipeRefreshLayout) v.findViewById(R.id.swipe_refresh);
 		swipeRefreshLayout.setOnRefreshListener(this);
 
+		// XXX emptyList()? No-arg constructor?
 		adapter = new OrderListAdapter(new ArrayList<Order>());
 		recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 		recyclerView.setAdapter(adapter);
@@ -68,6 +69,7 @@ public class OrderListFragment extends Fragment implements
 		super.onActivityCreated(savedInstanceState);
 
 		swipeRefreshLayout.setRefreshing(true);
+		// XXX magic number
 		getLoaderManager().initLoader(0, null, this);
 	}
 
@@ -88,6 +90,7 @@ public class OrderListFragment extends Fragment implements
 	@Override
 	public void onLoadFinished(Loader<AsyncResult<List<Order>>> loader, AsyncResult<List<Order>> data) {
 		if(data.hasError()) {
+			// XXX printing error to toast?
 			Toast.makeText(getContext(), data.getError().toString(), Toast.LENGTH_LONG).show();
 		} else {
 			adapter.setData(data.getValue());
@@ -170,6 +173,7 @@ public class OrderListFragment extends Fragment implements
 
 			startAddress.setText(order.getStartAddress().toString());
 			endAddress.setText(order.getEndAddress().toString());
+			// XXX date format not reused
 			orderDate.setText(DateFormat.getDateFormat(getContext()).format(order.getOrderTime()));
 			price.setText(order.getPrice().toString());
 		}
@@ -205,6 +209,7 @@ public class OrderListFragment extends Fragment implements
 		}
 
 		public void setData(List<Order> data) {
+			// XXX no defensive copy
 			this.data = data;
 			notifyDataSetChanged();
 		}

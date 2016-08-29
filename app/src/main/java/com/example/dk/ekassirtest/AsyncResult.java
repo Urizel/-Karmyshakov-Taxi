@@ -2,11 +2,13 @@ package com.example.dk.ekassirtest;
 
 import android.support.annotation.Nullable;
 
+// XXX mutable?
 public class AsyncResult<T> {
 
 	private T value;
 	private Throwable error;
 
+	// XXX why not separate constructors?
 	public AsyncResult(@Nullable T value, @Nullable Throwable error) {
 		this.value = value;
 		this.error = error;

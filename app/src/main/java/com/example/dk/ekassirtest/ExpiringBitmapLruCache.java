@@ -14,6 +14,7 @@ public class ExpiringBitmapLruCache<K> extends LruCache<K, Bitmap> {
 	private long expiringTime; //in ms
 	private Map<K, Long> timeMap;
 
+	// XXX not thread-safe
 	public static ExpiringBitmapLruCache<String> getInstance() {
 		if (instance == null) {
 			int maxMemory = (int) (Runtime.getRuntime().maxMemory());
@@ -24,6 +25,7 @@ public class ExpiringBitmapLruCache<K> extends LruCache<K, Bitmap> {
 		return instance;
 	}
 
+    // Non-private singleton constructor
 	public ExpiringBitmapLruCache(int maxSize, long expiringTime) {
 		super(maxSize);
 

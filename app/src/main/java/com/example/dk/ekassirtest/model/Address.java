@@ -3,6 +3,7 @@ package com.example.dk.ekassirtest.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+// XXX suppress for class
 @SuppressWarnings("unused")
 public class Address implements Parcelable {
 	private String city;
@@ -34,7 +35,8 @@ public class Address implements Parcelable {
 		this.city = city;
 	}
 
-
+    // XXX used for formatting on UI layer
+    // XXX not optimal - could use concat
 	@Override
 	public String toString() {
 		return String.format("%s, %s", city, address);
@@ -57,6 +59,7 @@ public class Address implements Parcelable {
 		return 0;
 	}
 
+    // XXX what is i?
 	@Override
 	public void writeToParcel(Parcel parcel, int i) {
 		parcel.writeString(city);
