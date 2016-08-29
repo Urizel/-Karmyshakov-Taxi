@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.GridLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="?android:attr/selectableItemBackground"
+    app:columnCount="2">
+
+    <TextView
+        android:id="@+id/start_address_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_columnWeight="7"
+        app:layout_column="0"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        android:text="@string/start_address_title"/>
+
+    <TextView
+        android:id="@+id/order_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_columnWeight="1"
+        android:gravity="end"
+        app:layout_column="1"
+        tools:text="20.08.2016"/>
+
+    <TextView
+        android:id="@+id/start_address"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_columnWeight="7"
+        app:layout_column="0"
+        app:layout_columnSpan="2"
+        android:layout_marginBottom="@dimen/text_margin"
+        tools:text="Санкт-Петербург, Кушелевская дорога, 123"/>
+
+    <TextView
+        android:id="@+id/end_address_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_columnWeight="7"
+        app:layout_column="0"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        android:text="@string/end_address_title"/>
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        app:layout_columnWeight="2"
+        android:gravity="bottom|end"
+        app:layout_column="1"
+        tools:text="450.0 RUB"/>
+
+    <TextView
+        android:id="@+id/end_address"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_columnWeight="7"
+        app:layout_column="0"
+        app:layout_columnSpan="2"
+        tools:text="Санкт-Петербург, Коннгвардейский бульвар, 4"/>
+
+</android.support.v7.widget.GridLayout>
